@@ -2,7 +2,7 @@
     'use strict';
 
     angular.module('angular-pinyin-translate', [])
-        .factory('PinyinTranslate', PinyinTranslateModule);
+        .factory('$pinyinTranslate', PinyinTranslateModule);
 
     PinyinTranslateModule.$inject = [];
 
@@ -129,13 +129,25 @@
         };
 
 
-        return {
-            build: build
-        };
+        var service = build();
+
+        function getFullChars(str) {
+            return service.getFullChars(str);
+        }
+
+        function getCamelChars(str) {
+            return service.getCamelChars(str);
+        }
 
         function build(options) {
             return new PinyinTranslate(options);
         }
+
+        return {
+            build: build,
+            getFullChars: getFullChars,
+            getCamelChars: getCamelChars
+        };
 
     }
 
