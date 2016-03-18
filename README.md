@@ -28,15 +28,11 @@ angular.module('app', [
 
 # Usage
 
-把`$pinyinTransalte` 模块inject到你需要使用的控制器或者服务中。
+把`$pinyinTranslate` 模块inject到你需要使用的控制器或者服务中。
 #Example
 ```javascript
-var pinyin1 = $pinyinTransalte.getFullChars("张三");
-var pinyin2 = $pinyinTransalte.getCamelChars("张三");
+var pinyin1 = $pinyinTranslate.getFullChars("张三");
+var pinyin2 = $pinyinTranslate.getCamelChars("张三");
 //pinyin1:ZhangSan
 //pinyin2:ZS
 ```
-
-
-
-
